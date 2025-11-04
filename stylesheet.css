@@ -1,0 +1,2144 @@
+/*------------GLOBAL STYLES - Common across all pages------------*/
+
+/* Prevent horizontal scrolling and set viewport height */
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Base body styles applied to all pages */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(to left, #141136, #262252);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---------NAVIGATION - Top navbar and links-------------*/
+
+/* Fixed navigation bar at top of page */
+#navbar {   
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 2;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  padding: 20px 20px;
+  z-index: 50;
+}
+
+/* Navigation button styles for upper right menu */
+.navbutton {  
+  width: 100px;
+  height: 40px;
+  font-weight: bold;
+  border: 0;
+  margin: 0 20px;
+  white-space: nowrap;
+  font-size: 16px;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  background-color: #ea7d6d;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Unvisited link state - white text, no underline */
+a:link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Hover state for links and navigation buttons */
+a:hover, .navbutton:hover {
+  background-color: #141136;
+  color: #fff3b4;
+  transform: scale(1.05);
+  cursor: pointer;
+  outline: 2px solid #fff3b4;
+}
+
+/* Active state when link is being clicked */
+.navbutton.active  {
+  background-color: #141136;
+  text-decoration: none;
+  outline: 2px solid #fff3b4;
+  transform: scale(1.05);
+}
+
+/* Logo/name text in upper left corner */
+.logo {   
+  color: #fdcd00;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  float: left;
+  margin: 1.5em;
+  position: fixed;
+  top: 15px;
+  left: 25px;
+  word-spacing: normal;
+  text-align: left;
+  z-index: -2;
+}
+
+/* -------------HOMEPAGE SPECIFIC STYLES--------------*/
+
+/* Call-to-action button that links to portfolio */
+.cta {
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  margin: 2em;
+  padding: 10px;
+  width: 300px;
+  height: 60px;
+  position: absolute;
+     top: 300px;
+     left: 135px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(to left, #fdcd00, #fdcd00);
+  border-radius: 20px;
+  word-spacing: 0px;
+  opacity: 0;
+  z-index: 50;
+  transform: translateY(-100%);
+  animation: ctaanimation 1s ease forwards;
+}
+
+/* CTA button slide-in animation */
+@keyframes ctaanimation {
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* CTA button hover effect */
+.cta:hover {
+  background: linear-gradient(to left, #ea7d6d, #fdcd00);
+  color: #fff3b4;
+  cursor: pointer;
+  outline: 2px solid #fff3b4;
+}
+
+/* CTA button active/clicked state */
+.cta:active {
+  color: #a1493c;
+}
+
+/* Hero section wrapper containing main introduction content */
+.hero-wrapper1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Main information section with salutation, name, title, and description */
+#main-information {
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  flex: 1 1 500px;
+  min-width: 280px;
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  position: relative;
+}
+
+/* Salutation line ("Hi, my name is") */
+h2.salutation {
+  color: #ea7d6d;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: salanimation 1s ease forwards;
+}
+
+/* Salutation animation - slide in from left */
+@keyframes salanimation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Name heading ("Nashwa Hamido") */
+h1.name {
+  color: #ea7d6d;
+  font-size: 70px;
+  font-weight: bold;
+  margin: 0;
+  opacity: 0;
+  transform: translateX(-200px);
+  animation: nameanimation 1.2s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Name animation - slide in from left with delay */
+@keyframes nameanimation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Job title heading ("Multimedia Artist") */
+h3.title {
+  color: #ea7d6d;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 0 30px 0;
+  opacity: 0;
+  transform: translateX(-200px);
+  animation: titleanimation 1.3s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* Title animation - slide in from left with delay */
+@keyframes titleanimation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Professional description paragraph */
+.description {
+  color: rgb(234, 234, 234);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 23px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: desanimation 1.5s ease forwards;
+  animation-delay: 0.9s;
+}
+
+/* Description animation - slide in from bottom with delay */
+@keyframes desanimation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* -----------Homepage Motifs and Background Elements--------- */
+
+/* Container for side images (character illustration and motifs) */
+#side-images {
+  flex: 1 1 500px;
+  min-width: 300px;
+  height: 600px;
+  position: fixed;
+  top: 100px;
+  right: 100px;
+}
+
+/* Character illustration (girl playing games) */
+.girlplayinggames {
+  max-width: 430px;
+  height: auto;
+  position: relative;
+  transform: translateY(100%);
+  z-index: 12;
+  opacity: 0;
+  animation: girlanimation 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* Girl illustration animation - slide in from bottom */
+@keyframes girlanimation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base styles for background motif images */
+.upperbackground,   
+.bottombackground {
+  position: fixed;
+  width: auto;
+  height: auto;
+  z-index: 10;
+}
+
+/* Upper yellow cloud motif */
+.upperbackground {
+  top: -20px;
+  right: 0;
+  max-width: 1100px;
+  animation: upperanimation 1s ease forwards;
+}
+
+/* Lower coral/peach cloud motif */
+.bottombackground {
+  bottom: 0;
+  right: -30px;
+  max-width: 1200px;
+  animation: bottomanimation 1s ease forwards;
+}
+
+/* Upper motif animation - slide in from right */
+@keyframes upperanimation {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Lower motif animation - slide in from bottom */
+@keyframes bottomanimation {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Copyright footer - unique positioning for homepage */
+#copyright {
+  color: #ea7d6d;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+  position: relative;
+  left: -21%;
+  transform: translateX(0%);
+  z-index: 10;
+}
+
+/* ----------------ABOUT PAGE SPECIFIC STYLES----------------- */
+
+/* Animated side navigation tabs - only on about landing page */
+ul.sidetabs-animated {
+  list-style-type: none;
+  line-height: 80px;
+  position: relative;
+  top: 180px;
+  left: -50px;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: sideanimation 1s ease forwards;
+}
+
+/* Side navigation animation - slide in from right */
+@keyframes sideanimation {
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* Animated side navigation button styles */
+.sidenavbutton-animated {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 300px;
+  height: 40px;
+  font-weight: bold;
+  border: 0;
+  font-size: 16px;
+  border-radius: 10px 10px 10px 10px;
+  word-spacing: 0px;
+  color: #141136;
+  background: linear-gradient(to left, #fdcd00, #fdcd00);
+  line-height: 40px;
+  text-align: center;
+}
+
+/* Animated side navigation button hover effect */
+.sidenavbutton-animated:hover {
+  background: linear-gradient(to right, #ea7d6d, #fdcd00);
+  color: #fff3b4;
+  transform: scale(1.20);
+  cursor: pointer;
+  outline: 2px solid #fff3b4;
+}
+
+/* Animated side navigation button active state */
+.sidenavbutton-animated.active {
+  background: linear-gradient(to right, #ea7d6d, #fdcd00);
+  color: #fff3b4;
+  transform: scale(1.20);
+  cursor: pointer;
+  outline: 2px solid #fff3b4;
+}
+
+/* Main content container for about page */
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 1000px;
+  position: relative;
+  left: 200px;
+  bottom: 150px;
+  width: 100%;
+  margin: 10px auto;
+  padding: 0 10px;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+
+/* Work information section heading and content */
+#workinfo {
+  position: relative;
+  left: 0px;
+  top: 20px;
+  bottom: 0;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  width: 100%;
+  text-align: left;
+  color: #ea7d6d;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: sideanimation 1s ease forwards;
+}
+
+/* Left column list of work positions */
+.leftlist {
+  position: relative;
+  top: 20px;
+  color: #fdcd00;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 26px;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: sideanimation 1s ease forwards;
+}
+
+/* Right column list of work positions */
+.rightlist {
+  position: relative;
+  top: -150px;
+  left: 45%;
+  color: #fdcd00;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 26px;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: sideanimation 1s ease forwards;
+}
+
+/* Individual work position detail lines (location and dates) */
+.one, .two, .three, .four, .five, .six {
+  text-align: left;
+  margin-left: -40px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(212, 212, 212);
+}
+
+/* Bottom action buttons container */
+#bottomtabs {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 150px;
+  right: 160px;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  color: #ea7d6d;
+}
+
+/* Download CV button styles */
+.dlbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 40px;
+  font-weight: bold;
+  border: 0;
+  color: #141136;
+  font-size: 16px;
+  border-radius: 10px 10px 10px 10px;
+  word-spacing: 0px;
+  background: linear-gradient(to left, #ea7d6d, #ea7d6d);
+  line-height: 40px;
+  text-align: center;
+}
+
+/* Download button hover effect */
+.dlbutton:hover {
+  background: linear-gradient(to right, #ea7d6d, #fdcd00);
+  color: #fff3b4;
+  transform: scale(1.05);
+  cursor: pointer;
+  outline: 2px solid #fff3b4;
+  background-color: #a1493c;
+}
+
+/* Download button active/clicked state */
+.dlbutton:active {
+  background-color: #ea7d6d;
+  color: #fff3b4;
+  transform: scale(1.05);
+  cursor: pointer;
+  outline: 2px solid #fff3b4;
+  background-color: #a1493c;
+}
+
+/* LinkedIn button styles */
+.libutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 40px;
+  font-weight: bold;
+  color: #141136;
+  border: 0;
+  row-gap: 2px;
+  font-size: 16px;
+  border-radius: 10px 10px 10px 10px;
+  word-spacing: 0px;
+  background: linear-gradient(to right, #ea7d6d, #ea7d6d);
+  line-height: 40px;
+  text-align: center;
+}
+
+/* LinkedIn button hover effect */
+.libutton:hover {
+  background: linear-gradient(to right, #ea7d6d, #fdcd00);
+  color: #fff3b4;
+  transform: scale(1.05);
+  cursor: pointer;
+  outline: 2px solid #fff3b4;
+  background-color: #a1493c;
+}
+
+/* LinkedIn button active/clicked state */
+.libutton:active {
+  background-color: #ea7d6d;
+  color: #fff3b4;
+  transform: scale(1.05);
+  cursor: pointer;
+  outline: 2px solid #fff3b4;
+  background-color: #a1493c;
+}
+
+/* Copyright footer - unique positioning for about pages */
+#copyright1 {
+  color: #ea7d6d;
+  font-size: 12px;
+  width: 100vw;
+  font-weight: normal;
+  text-align: center;
+  position: fixed;
+       bottom: 20px;
+       left: 180px;
+  z-index: 10;
+}
+
+/* --------------SKILLS PAGE SPECIFIC STYLES --------------*/
+
+/* Static side navigation tabs - on skills and education pages */
+ul.sidetabs {
+  list-style-type: none;
+  line-height: 80px;
+  position: relative;
+  top: 180px;
+  left: -50px;
+}
+
+/* Static side navigation button styles for skills and education pages*/
+.sidenavbutton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 300px;
+  height: 40px;
+  font-weight: bold;
+  border: 0;
+  font-size: 16px;
+  border-radius: 10px 10px 10px 10px;
+  word-spacing: 0px;
+  color: #141136;
+  background: linear-gradient(to left, #fdcd00, #fdcd00);
+  line-height: 40px;
+  text-align: center;
+}
+
+/* Static side navigation button hover effect for skills and education pages*/
+.sidenavbutton:hover {
+  background: linear-gradient(to right, #ea7d6d, #fdcd00);
+  color: #fff3b4;
+  transform: scale(1.20);
+  cursor: pointer;
+  outline: 2px solid #fff3b4;
+}
+
+/* Static side navigation button active/focus states for skills and education pages */
+.sidenavbutton.active {
+  background: linear-gradient(to right, #ea7d6d, #fdcd00); 
+  color: #fff3b4; 
+  cursor: pointer; 
+  transform: scale(1.20);
+  outline: 2px solid #fff3b4; 
+}
+
+/* Main content container for skills page */
+.container2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  position: relative;
+  left: 200px;
+  bottom: 150px;
+  width: 100%;
+  margin: 10px auto;
+  padding: 0 10px;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+
+/* Skills section heading */
+#skillstitle {
+  position: relative;
+  left: 0px;
+  top: 20px;
+  bottom: 0;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  width: 100%;
+  text-align: left;
+  color: #ea7d6d;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: sideanimation 1s ease forwards;
+}
+
+/* Courses list section */
+.courses {
+  position: relative;
+  top: 20px;
+  color: #fdcd00;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 26px;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: sideanimation 1s ease forwards;
+}
+
+/* Software proficiency list section */
+.software {
+  position: relative;
+  top: 20px;
+  right: 100px;
+  color: #fdcd00;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 26px;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: sideanimation 1s ease forwards;
+}
+
+/* Software category detail lines (Graphic, 3D, Engines) */
+.graphics, .threeD, .engines {
+  text-align: left;
+  margin-left: -40px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(212, 212, 212);
+}
+
+/* ------------------EDUCATION PAGE SPECIFIC STYLES----------------- */
+
+/* Main content container for education page */
+.container3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  position: relative;
+  left: 200px;
+  bottom: 150px;
+  width: 100%;
+  margin: 10px auto;
+  padding: 0 10px;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+
+/* Academic background section heading */
+#academic {
+  display: flex;
+  position: fixed;
+  top: 130px;
+  left: 390px;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  margin: 2em;
+  padding: 10px;
+  color: #ea7d6d;
+  animation-name: academicanimation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes acadamicanimation {
+  from {
+    position: fixed;
+    top: 130px;
+    left: -2000px;
+    margin-bottom: 1px;
+  }
+  to {
+    position: fixed;
+    top: 130px;
+    left: 390px;
+    margin-bottom: 1px;
+  }
+}
+
+/* Degrees list section */
+.degrees {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 90px;
+  position: fixed;
+  top: 165px;
+  left: 420px;
+  color: #fdcd00;
+  text-align: left;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 26px;
+  animation-name: grpanimation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+/* Degrees list animation - slide in from right */
+@keyframes grpanimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* Master's degree detail lines */
+.msc {
+  text-align: left;
+  margin-left: -40px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(212, 212, 212);
+}
+
+/* Bachelor's degree detail lines */
+.bfa {
+  text-align: left;
+  margin-left: -40px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(212, 212, 212);
+}
+
+/* Languages section heading */
+#languages {
+  display: flex;
+  position: fixed;
+  top: 150px;
+  left: 840px;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  margin: 2em;
+  padding: 10px;
+  color: #ea7d6d;
+  animation-name: skillsanimation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+/* Languages heading animation - slide in from left */
+@keyframes skillsanimation {
+  from {
+    position: fixed;
+    top: 130px;
+    left: -2000px;
+    margin-bottom: 1px;
+  }
+  to {
+    position: fixed;
+    top: 130px;
+    left: 840px;
+    margin-bottom: 1px;
+  }
+}
+
+/* Languages list section */
+.languagelist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-left: 220px;
+  position: fixed;
+  top: 150px;
+  right: 300px;
+  color: #fdcd00;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 500px;
+  animation-name: grp2animation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+/* Languages list animation - slide in from right */
+@keyframes grp2animation {
+  from {
+    line-height: 26px;
+    position: fixed;
+    top: 170px;
+    right: -1000px;
+  }
+  to {
+    line-height: 26px;
+    position: fixed;
+    top: 170px;
+    right: 300px;
+  }
+}
+
+/* Copyright footer - unique positioning for education page (duplicate from about) */
+#copyright1 {
+  color: #ea7d6d;
+  font-size: 12px;
+  width: 100vw;
+  font-weight: normal;
+  text-align: center;
+  position: fixed;
+       bottom: 20px;
+       left: 180px;
+  z-index: 10;
+}
+
+/* -------------- PORTFOLIO PAGES - Carousel styles ----------*/
+
+/* Global box-sizing and scrollbar styles for carousel */
+* {
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent;
+}
+
+/* Hide scrollbar in WebKit browsers (Chrome, Safari) */
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Hide scrollbar track in WebKit browsers */
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Hide scrollbar thumb in WebKit browsers */
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+/* Hide scrollbar in Internet Explorer and Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+/* Reset list styles for carousel */
+ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main carousel container - centered on page */
+#carousel {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 780px;
+  height: 460px;
+  overflow: hidden;
+  perspective: 100px;
+}
+
+/* Carousel images - rounded corners */
+#carousel img {
+  border-radius: 20px;
+}
+
+/* Carousel videos - rounded corners and 3D transform */
+#carousel video {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 20px 20px;
+  transform: translateZ(0);
+}
+
+/* Carousel viewport - horizontal scrolling container */
+.carouselviewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+/* Individual carousel slide */
+.carouselslide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  counter-increment: item;
+}
+
+/* Carousel slide snapper - ensures slides snap to center */
+.carouselsnapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+  overflow: hidden;
+  border-radius: 20px 20px 20px 20px;
+}
+
+
+.carouselslide:last-child .carouselsnapper {
+  animation-name: tostart, snap;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .carouselsnapper {
+    animation-name: none;
+  }
+}
+
+/* Disable animations when carousel is hovered or focused */
+.carousel:hover .carouselsnapper,
+.carousel:focus-within .carouselsnapper {
+  animation-name: none;
+}
+
+/* Carousel navigation dots container */
+.carouselnavigation {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+/* Carousel navigation list and items - inline display */
+.carouselnavigation-list,
+.carouselnavigation-item {
+  display: inline-block;
+}
+
+/* Individual carousel navigation button (dot) */
+.carouselnavigation-button {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #ea7d6d;
+  background-clip: content-box;
+  border: 0.25rem solid transparent;
+  border-radius: 50%;
+  font-size: 0;
+  transition: transform 0.1s;
+}
+
+/* Carousel navigation button hover effect */
+.carouselnavigation-button:hover {
+  background-color: #fdcd00;
+  transform: scale(1.10);
+  cursor: pointer;
+  outline: 2px solid #fff3b4;
+}
+
+/* Carousel navigation button active/focus states */
+.carouselnavigation-button.active {
+  background-color: #ea7d6d;
+  color: #fff3b4; 
+  cursor: pointer; 
+  outline: 2px solid #fff3b4; 
+}
+
+/* Previous and next slide navigation buttons */
+.carouselprev,
+.carouselnext {
+  position: absolute;
+  top: 0;
+  margin-top: 37.5%;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 0;
+  outline: 0;
+}
+
+/* Previous button positioning */
+.carouselprev {
+  left: -1rem; 
+}
+
+/* Next button positioning */
+.carouselnext {
+  right: -1rem; 
+}
+
+
+/* Animated portfolio navigation tabs - only on portfolio landing page */
+.portfoliotabs-animated {
+  list-style-type: none;
+  line-height: 80px;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  gap: 15px;
+  animation-name: portfolionavanimation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+/* Portfolio navigation animation - slide in from top */
+@keyframes portfolionavanimation {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+/* Animated portfolio navigation button styles */
+.portfolionav-animated {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  font-weight: bold;
+  border: 0;
+  font-size: 12px;
+  border-radius: 10px 10px 10px 10px;
+  background: linear-gradient(to left, #fdcd00, #fdcd00);
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Animated portfolio navigation button hover effect */
+.portfolionav-animated:hover {
+  background: linear-gradient(to right, #ea7d6d, #fdcd00); 
+  color: #fff3b4; 
+  cursor: pointer; 
+  outline: 2px solid #fff3b4; 
+}
+
+/* Animated portfolio navigation button active */
+.portfolionav-animated.active{
+  background: linear-gradient(to right, #ea7d6d, #fdcd00); 
+  color: #fff3b4; 
+  cursor: pointer; 
+  outline: 2px solid #fff3b4; 
+}
+
+/* Static portfolio navigation tabs - on other portfolio pages */
+.portfoliotabs {  
+  list-style-type: none; 
+  line-height: 80px; 
+  display: flex;
+  flex-direction: row; 
+  position: fixed; 
+  bottom: 60px; 
+  left: 0; 
+  right: 0; 
+  justify-content: center; 
+  gap: 15px; 
+}
+/* Static portfolio navigation button styles */
+
+.portfolionav {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  width: 150px; 
+  height: 40px; 
+  font-weight: bold; 
+  border: 0; 
+  font-size: 12px; 
+  border-radius: 10px 10px 10px 10px; 
+  background: linear-gradient(to left, #fdcd00, #fdcd00); 
+  line-height: 40px; 
+  text-align: center; 
+  text-decoration: none; 
+}
+
+/* Static portfolio navigation button hover effect */
+.portfolionav:hover {
+  background: linear-gradient(to right, #ea7d6d, #fdcd00); 
+  color: #fff3b4; 
+  cursor: pointer; 
+  outline: 2px solid #fff3b4; 
+}
+
+/* Static portfolio navigation button active states */
+.portfolionav.active {
+  background: linear-gradient(to right, #ea7d6d, #fdcd00); 
+  color: #fff3b4; 
+  cursor: pointer; 
+  outline: 2px solid #fff3b4; 
+}
+
+
+/* Animated background motifs on portfolio landing page only */
+
+/* Bottom left cloud motif - animated */
+.bottomleftbackground-animated {  
+  max-height: fit-content; 
+  position: fixed; 
+  max-width: 400px; 
+  bottom: -10px; 
+  left: -60px; 
+  justify-content: start; 
+  z-index: -10; 
+  animation-name: bottomleftanimation;
+  animation-duration: 0.5s; 
+}
+
+/* Bottom left motif animation - slide in from left */
+@keyframes bottomleftanimation {
+  from {
+    transform: translateX(-100%); 
+  }
+  to {
+    transform: translateX(0%); 
+  }
+}
+
+/* Bottom right cloud motif - animated */
+.bottomrightbackground-animated {
+  max-width: 900px; 
+  max-height: fit-content;
+  position: fixed; 
+  bottom: -10px; 
+  right: -70px; 
+  justify-content: end; 
+  z-index: -10; 
+  animation-name: bottomrightanimation;
+  animation-duration: 0.5s; 
+  animation-fill-mode: forwards; 
+}
+
+/* Bottom right motif animation - slide in from right */
+@keyframes bottomrightanimation {
+  from {
+    transform: translateX(100%); 
+  }
+  to {
+    transform: translateX(0%); 
+  }
+}
+
+/* Static background motifs on other portfolio pages */
+
+/* Bottom left cloud motif - static */
+.bottomleftbackground  {  
+  max-width: 400px; 
+  max-height: fit-content; 
+  position: fixed; 
+     bottom: -10px; 
+     left: -60px; 
+  justify-content: start; 
+  z-index: -10; 
+ }
+
+/* Bottom right cloud motif - static */
+.bottomrightbackground {
+  max-width: 900px; 
+  max-height: fit-content; 
+  position: fixed; 
+  bottom: -10px; 
+  right: -70px; 
+  justify-content: end;
+  z-index: -10; 
+}
+
+/* Copyright footer - unique positioning for portfolio pages */
+#copyright3 {
+    display: flex; 
+    justify-items: center; 
+    align-items: center; 
+    font-family: Verdana, Tahoma, Arial, sans-serif; 
+    font-size: 12px; 
+    font-weight: normal; 
+    color: #ea7d6d; 
+    position: fixed; 
+        bottom: 20px; 
+        right: 480px; 
+    word-spacing: 0; 
+    z-index: 2; 
+}
+
+/* ------------------ ILLUSTRATIONS PAGE - Grid layout -------------------*/
+
+/* Grid container for illustration stickers */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 2fr)); 
+    gap: 30px;    
+    background: none; 
+    background-color: transparent;
+    max-width: 600px; 
+    margin: 120px auto 120px auto; 
+    justify-items: center;
+    
+}
+
+/* Individual sticker wrapper */
+.sticker-wrapper {
+    background-color: #262252;
+    border-radius: 20px;          
+    display: flex;            
+    justify-content: center;
+    align-items: center;
+    animation-duration: 1s;
+    animation-name: iconanimation;
+    animation-fill-mode: forwards;
+    max-width: 200px;
+    width: 100%;
+}
+
+/* Grid hover effect */
+
+#grid:hover {
+    transform: scale(1.05);
+}
+
+/* Sticker wrapper animation - slide in from left */
+
+
+@keyframes iconanimation   {
+  from {
+    transform: translateX(-500%);
+  }
+  to {
+    transform: translateX(-5%);
+  }   
+}
+
+/* Individual sticker image */
+.sticker {
+    max-width: 100%; 
+    height: auto;
+    display: block;
+}
+
+
+
+/* ---------CONTACT PAGE SPECIFIC STYLES----------*/
+
+/* Contact form container - centered on page with animation */
+#contact-container {
+  height: 400px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-evenly; 
+  position: fixed; 
+  bottom: 140px; 
+  right: 450px; 
+  font-family: Verdana, Tahoma, Arial, sans-serif; 
+  font-weight: bold; 
+  word-spacing: 0;
+  color: #fdcd00; 
+  line-height: 15px; 
+  z-index: 50; 
+  animation-name: ctaanimation;
+  animation-duration: 2s; 
+  animation-fill-mode: forwards;
+}
+
+/* Contact form styles */
+.contact-form {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 12px; 
+  vertical-align: center; 
+  margin: 0 auto; 
+  font-weight: normal; 
+  font-size: 20px;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  z-index: 50; 
+}
+
+/* Contact form input fields */
+.contact-input {
+  width: 400px; 
+  height: 45px; 
+  outline: none; 
+  border: none; 
+  font-family: Verdana, Tahoma, Arial, sans-serif; 
+  font-size: 12px; 
+  font-weight: normal; 
+  border-radius: 20px; 
+  padding: 10px; 
+  margin: 5px; 
+  color: #3c3c3c; 
+  z-index: 50; 
+}
+
+/* Contact input hover and focus states */
+.contact-input:hover,
+.contact-input:focus,
+.contact-input:focus-visible .contact-input:active {
+  cursor: pointer; 
+  outline: 2px solid #ea7d6d; 
+}
+
+/* Contact input placeholder text color */
+.contact-input::placeholder {
+  color: #929292 
+}
+
+/* Contact form textarea - larger input area for messages */
+.contact-form textarea {
+  height: 140px; 
+  border-radius: 20px; 
+  padding-top: 15px; 
+}
+
+/* Contact form submit button */
+.contact-form button {
+  width: 400px; 
+  height: 40px; 
+  font-size: 18px; 
+  vertical-align: center; 
+  padding: 0px; 
+  border: none;
+  color: white; 
+  font-weight: bold; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  border-radius: 12px; 
+  background: linear-gradient(to left, #fdcd00, #fdcd00); 
+  animation-name: ctaanimation;
+  animation-duration: 2s; 
+  animation-fill-mode: forwards; 
+  z-index: 50; 
+}
+
+/* Contact form button hover and focus stateses */
+.contact-form button:hover,
+.contact-form button:focus,
+.contact-form button:focus-visible .contact-form button:active {
+  background: linear-gradient(to left, #ea7d6d, #fdcd00); 
+  color: #fff3b4;  
+  transform: scale(1.05); 
+  cursor: pointer; 
+  outline: 2px solid #fff3b4; 
+}
+
+
+/* LinkedIn logo icon */
+.linkedin {
+    display: inline;
+    position: fixed;
+       bottom: 90px;
+       left: 580px;
+    border: none;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.linkedin img {
+  width: 30px;
+  height: auto;
+    
+}
+.linkedin:hover {
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Behance logo icon  */
+.behance {
+    display: inline;
+    position: fixed;
+       bottom: 93px;
+       left: 630px;
+    border: none;
+    z-index: 100;
+    cursor: pointer;
+}
+.behance img {
+   width: 30px;
+   height: auto;
+}
+.behance:hover {
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Upper background motif for contact page */
+.upperbackground2 {
+    max-width: 1100px; 
+    max-height: fit-content; 
+    position: fixed; 
+        top: -150px; 
+        right: 0px; 
+    justify-content: start; 
+    z-index: -20; 
+    animation-name: upperanimation2; 
+    animation-duration:0.5s; 
+}
+
+/* Upper motif animation for contact page - slide in from right */
+@keyframes upperanimation2   {
+  from {
+    transform: translateX(100%); 
+  }
+  to {
+    transform: translateX(0%); 
+  }   
+}
+
+/* Bottom background motif for contact page */
+.bottombackground2 {
+    max-width: 1000px; 
+    max-height: fit-content; 
+    position: fixed; 
+        bottom: -20px; 
+        left: 0; 
+    justify-content: start; 
+    z-index: -20; 
+    animation-name: bottomanimation2; 
+    animation-duration: 0.5s; 
+    animation-fill-mode: forwards; 
+}
+
+/* Bottom motif animation for contact page - slide in from left */
+@keyframes bottomanimation2   {
+  from {
+    transform: translateX(-100%); 
+  }
+  to {
+    transform: translateX(0%); 
+  }   
+}
+
+/* Copyright footer - unique positioning for contact page */
+#copyright4 {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-family: Verdana, Tahoma, Arial, sans-serif; 
+    font-size: 12px; 
+    font-weight: normal; 
+    color: #ea7d6d; 
+    position: fixed; 
+        bottom: 20px; 
+        right: 480px; 
+    word-spacing: 0; 
+    z-index: 2; 
+}
+
+/* ==================== RESPONSIVE DESIGN - Media Queries ==================== */
+
+/* Tablets and smaller screens (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  
+  /* Navigation adjustments */
+  #navbar {
+    padding: 15px 10px;
+  }
+  
+  .navbutton {
+    width: 80px;
+    height: 35px;
+    font-size: 14px;
+    margin: 0 10px;
+    line-height: 35px;
+  }
+  
+  .logo {
+    font-size: 14px;
+    left: 15px;
+    top: 10px;
+  }
+  
+  /* Homepage adjustments */
+  .hero-wrapper1 {
+    margin: 100px 20px;
+    gap: 20px;
+  }
+  
+  h1.name {
+    font-size: 50px;
+  }
+  
+  h2.salutation {
+    font-size: 18px;
+  }
+  
+  h3.title {
+    font-size: 24px;
+  }
+  
+  .cta {
+    width: 250px;
+    height: 50px;
+    font-size: 16px;
+    left: 50px;
+    top: 250px;
+  }
+  
+  #side-images {
+    right: 20px;
+    top: 80px;
+  }
+  
+  .girlplayinggames {
+    max-width: 350px;
+  }
+  
+  .upperbackground {
+    max-width: 800px;
+  }
+  
+  .bottombackground {
+    max-width: 900px;
+  }
+  
+  /* About page adjustments */
+  .container1 {
+    left: 150px;
+    max-width: 800px;
+  }
+  
+  ul.sidetabs-animated {
+    left: -30px;
+    top: 150px;
+  }
+  
+  .sidenavbutton-animated {
+    width: 250px;
+  }
+  
+  .rightlist {
+    left: 40%;
+  }
+  
+  #bottomtabs {
+    bottom: 120px;
+    right: 100px;
+  }
+  
+  .dlbutton, .libutton {
+    width: 250px;
+  }
+  
+  /* Skills page adjustments */
+  .container2 {
+    left: 150px;
+    max-width: 800px;
+  }
+  
+  ul.sidetabs {
+    left: -30px;
+    top: 150px;
+  }
+  
+  .sidenavbutton {
+    width: 250px;
+  }
+  
+  /* Education page adjustments */
+  .container3 {
+    left: 150px;
+    max-width: 800px;
+  }
+  
+  #academic {
+    left: 300px;
+  }
+  
+  .degrees {
+    left: 330px;
+  }
+  
+  #languages {
+    left: 650px;
+  }
+  
+  .languagelist {
+    right: 200px;
+  }
+  
+  /* Portfolio carousel adjustments */
+  #carousel {
+    width: 650px;
+    height: 380px;
+  }
+  
+  .portfoliotabs-animated,
+  .portfoliotabs {
+    gap: 10px;
+  }
+  
+  .portfolionav-animated,
+  .portfolionav {
+    width: 120px;
+    font-size: 11px;
+  }
+  
+  .bottomleftbackground-animated,
+  .bottomleftbackground {
+    max-width: 300px;
+  }
+  
+  .bottomrightbackground-animated,
+  .bottomrightbackground {
+    max-width: 700px;
+  }
+  
+  /* Illustrations grid adjustments */
+  #grid {
+    max-width: 500px;
+    gap: 20px;
+  }
+  
+  /* Contact page adjustments */
+  #contact-container {
+    right: 300px;
+  }
+  
+  .contact-input {
+    width: 350px;
+  }
+  
+  .contact-form button {
+    width: 350px;
+  }
+  
+  .linkedin {
+    left: 480px;
+  }
+  
+  .behance {
+    left: 530px;
+  }
+  
+  .upperbackground2 {
+    max-width: 900px;
+  }
+  
+  .bottombackground2 {
+    max-width: 800px;
+  }
+}
+
+/* Mobile devices and small tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  
+  /* Navigation adjustments */
+  #navbar {
+    padding: 10px 5px;
+  }
+  
+  .navbutton {
+    width: 70px;
+    height: 32px;
+    font-size: 12px;
+    margin: 0 5px;
+    line-height: 32px;
+  }
+  
+  .logo {
+    font-size: 12px;
+    left: 10px;
+    top: 8px;
+  }
+  
+  /* Homepage adjustments */
+  .hero-wrapper1 {
+    margin: 80px 15px;
+    flex-direction: column;
+  }
+  
+  #main-information {
+    text-align: center;
+  }
+  
+  h1.name {
+    font-size: 40px;
+  }
+  
+  h2.salutation {
+    font-size: 16px;
+  }
+  
+  h3.title {
+    font-size: 20px;
+  }
+  
+  .description {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  
+  .cta {
+    width: 220px;
+    height: 45px;
+    font-size: 14px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    top: 220px;
+  }
+  
+  @keyframes ctaanimation {
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0%);
+    }
+  }
+  
+  #side-images {
+    position: relative;
+    right: auto;
+    top: auto;
+    display: flex;
+    justify-content: center;
+    height: auto;
+  }
+  
+  .girlplayinggames {
+    max-width: 280px;
+  }
+  
+  .upperbackground {
+    max-width: 600px;
+  }
+  
+  .bottombackground {
+    max-width: 700px;
+  }
+  
+  #copyright {
+    left: 0;
+    transform: translateX(0);
+    width: 100%;
+  }
+  
+  /* About page adjustments */
+  .container1 {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100px;
+    max-width: 90%;
+  }
+  
+  ul.sidetabs-animated {
+    position: relative;
+    left: 0;
+    top: 100px;
+    text-align: center;
+    line-height: 60px;
+  }
+  
+  .sidenavbutton-animated {
+    width: 200px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+  
+  #workinfo {
+    left: 0;
+  }
+  
+  .leftlist {
+    top: 10px;
+  }
+  
+  .rightlist {
+    position: relative;
+    left: 0;
+    top: 10px;
+  }
+  
+  #bottomtabs {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    flex-direction: column;
+    margin: 50px auto;
+  }
+  
+  .dlbutton, .libutton {
+    width: 220px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+  
+  #copyright1 {
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Skills page adjustments */
+  .container2 {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100px;
+    max-width: 90%;
+  }
+  
+  ul.sidetabs {
+    position: relative;
+    left: 0;
+    top: 100px;
+    text-align: center;
+    line-height: 60px;
+  }
+  
+  .sidenavbutton {
+    width: 200px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+  
+  #skillstitle {
+    left: 0;
+  }
+  
+  .software {
+    right: 0;
+  }
+  
+  /* Education page adjustments */
+  .container3 {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100px;
+    max-width: 90%;
+  }
+  
+  #academic {
+    position: relative;
+    left: 0;
+    top: 100px;
+    margin: 1em;
+  }
+  
+  .degrees {
+    position: relative;
+    left: 0;
+    top: 100px;
+    margin-top: 20px;
+  }
+  
+  #languages {
+    position: relative;
+    left: 0;
+    top: 100px;
+    margin: 1em;
+  }
+  
+  .languagelist {
+    position: relative;
+    right: 0;
+    top: 100px;
+    margin-top: 20px;
+    margin-left: 0;
+    line-height: 26px;
+  }
+  
+  /* Portfolio carousel adjustments */
+  #carousel {
+    width: 90vw;
+    max-width: 500px;
+    height: 300px;
+  }
+  
+  .portfoliotabs-animated,
+  .portfoliotabs {
+    flex-wrap: wrap;
+    gap: 8px;
+    bottom: 40px;
+  }
+  
+  .portfolionav-animated,
+  .portfolionav {
+    width: 100px;
+    height: 35px;
+    font-size: 10px;
+    line-height: 35px;
+  }
+  
+  .bottomleftbackground-animated,
+  .bottomleftbackground {
+    max-width: 200px;
+  }
+  
+  .bottomrightbackground-animated,
+  .bottomrightbackground {
+    max-width: 500px;
+  }
+  
+  #copyright3 {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  /* Illustrations grid adjustments */
+  #grid {
+    max-width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin: 100px auto;
+  }
+  
+  /* Contact page adjustments */
+  #contact-container {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 100px auto;
+    height: auto;
+  }
+  
+  .contact-input {
+    width: 90vw;
+    max-width: 300px;
+  }
+  
+  .contact-form button {
+    width: 90vw;
+    max-width: 300px;
+  }
+  
+  .linkedin {
+    left: 50%;
+    transform: translateX(-40px);
+    bottom: 70px;
+  }
+  
+  .behance {
+    left: 50%;
+    transform: translateX(10px);
+    bottom: 73px;
+  }
+  
+  .upperbackground2 {
+    max-width: 700px;
+  }
+  
+  .bottombackground2 {
+    max-width: 600px;
+  }
+  
+  #copyright4 {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  
+  /* Navigation adjustments */
+  .navbutton {
+    width: 60px;
+    height: 28px;
+    font-size: 10px;
+    margin: 0 3px;
+    line-height: 28px;
+  }
+  
+  .logo {
+    font-size: 10px;
+  }
+  
+  /* Homepage adjustments */
+  h1.name {
+    font-size: 32px;
+  }
+  
+  h2.salutation {
+    font-size: 14px;
+  }
+  
+  h3.title {
+    font-size: 18px;
+  }
+  
+  .description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  
+  .cta {
+    width: 180px;
+    height: 40px;
+    font-size: 12px;
+  }
+  
+  .girlplayinggames {
+    max-width: 220px;
+  }
+  
+  .upperbackground {
+    max-width: 450px;
+  }
+  
+  .bottombackground {
+    max-width: 500px;
+  }
+  
+  /* About page adjustments */
+  .sidenavbutton-animated {
+    width: 180px;
+    height: 32px;
+    font-size: 12px;
+    line-height: 32px;
+  }
+  
+  .dlbutton, .libutton {
+    width: 180px;
+    height: 32px;
+    font-size: 12px;
+    line-height: 32px;
+  }
+  
+  /* Skills page adjustments */
+  .sidenavbutton {
+    width: 180px;
+    height: 32px;
+    font-size: 12px;
+    line-height: 32px;
+  }
+  
+  /* Portfolio carousel adjustments */
+  #carousel {
+    height: 250px;
+  }
+  
+  .portfolionav-animated,
+  .portfolionav {
+    width: 85px;
+    height: 32px;
+    font-size: 9px;
+    line-height: 32px;
+  }
+  
+  .bottomleftbackground-animated,
+  .bottomleftbackground {
+    max-width: 150px;
+  }
+  
+  .bottomrightbackground-animated,
+  .bottomrightbackground {
+    max-width: 350px;
+  }
+  
+  /* Illustrations grid adjustments */
+  #grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+  }
+  
+  /* Contact page adjustments */
+  .contact-input {
+    max-width: 260px;
+    height: 40px;
+  }
+  
+  .contact-form button {
+    max-width: 260px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .contact-form textarea {
+    height: 120px;
+  }
+  
+  .upperbackground2 {
+    max-width: 500px;
+  }
+  
+  .bottombackground2 {
+    max-width: 450px;
+  }
+}
